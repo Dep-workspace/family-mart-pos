@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.pos.controller.MainFormController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.pos.controller.MainFormController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="128.0" layoutX="97.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../asset/ijse-logo.gif" />
+            <Image url="@../asset/cart.gif" />
          </image>
       </ImageView>
-      <Label layoutX="182.0" layoutY="76.0" text="SMART POINT of SALE SYSTEM">
+      <Label layoutX="377.0" layoutY="73.0" text="SALE SYSTEM" textFill="#fc6a02">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -66,6 +66,11 @@
       <Label alignment="CENTER" layoutX="8.0" layoutY="370.0" prefHeight="16.0" prefWidth="577.0" text="Copyright 2023 DEP. All Rights Reserved.">
          <font>
             <Font size="10.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="328.0" layoutY="25.0" prefHeight="36.0" prefWidth="204.0" text="FAMILY MART" textAlignment="CENTER" textFill="#f26304">
+         <font>
+            <Font name="Standard Symbols PS" size="31.0" />
          </font>
       </Label>
    </children>
