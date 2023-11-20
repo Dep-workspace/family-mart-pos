@@ -9,13 +9,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.dep11.pos.tm.Order;
 
 import java.io.IOException;
 import java.net.URL;
 
 public class SearchOrdersFormController {
     public TextField txtSearch;
-    public TableView tblOrders;
+    public TableView<Order> tblOrders;
     public AnchorPane root;
 
     public void tblOrders_OnMouseClicked(MouseEvent mouseEvent) {
