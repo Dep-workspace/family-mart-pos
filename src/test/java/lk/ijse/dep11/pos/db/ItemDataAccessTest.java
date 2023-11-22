@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ManageItemFormControllerTest {
-
+class ItemDataAccessTest {
     @BeforeEach
     void setUp() throws SQLException {
         SingleConnectionDataSource.getInstance().getConnection().setAutoCommit(false);
@@ -22,6 +21,7 @@ class ManageItemFormControllerTest {
         SingleConnectionDataSource.getInstance().getConnection().rollback();
         SingleConnectionDataSource.getInstance().getConnection().setAutoCommit(true);
     }
+
     @Test
     void getAllItems() throws SQLException {
         ItemDataAccess.saveItem(new Item("123456", "Keyboard", 10, new BigDecimal("1250.00")));
@@ -44,4 +44,21 @@ class ManageItemFormControllerTest {
         ItemDataAccess.saveItem(new Item("123456", "Keyboard", 10, new BigDecimal("1250.00")));
         assertDoesNotThrow(()-> ItemDataAccess.updateItem(new Item("123456", "HP Keyboard", 10, new BigDecimal("1250.00"))));
     }
+
+    @Test
+    void deleteItem() throws SQLException {
+        ItemDataAccess.saveItem(new Item("123456", "Keyboard", 10, new BigDecimal("1250.00")));
+        int count = ItemDataAccess.getAllItems().size();
+        assertDoesNotThrow(()-> ItemDataAccess.deleteItem("123456"));
+        assertEquals(count - 1, ItemDataAccess.getAllItems().size());
+    }
+
+    @Test
+    void existsItem() throws SQLException {
+        assertDoesNotThrow(()-> assertFalse(ItemDataAccess.existsItem("Crazy Item")));
+        ItemDataAccess.saveItem(new Item("123456", "Keyboard", 10, new BigDecimal("1250.00")));
+        assertTrue(ItemDataAccess.existsItem("123456"));
+
+    }
+
 }
