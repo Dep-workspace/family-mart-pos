@@ -19,7 +19,7 @@ public class OrderDataAccess {
     static {
         try{
             Connection connection = SingleConnectionDataSource.getInstance().getConnection();
-            STM_INSERT_ORDER = connection.prepareStatement("INSERT INTO \"order\"(id, data, customer_id) VALUES (?, ?, ?)" );
+            STM_INSERT_ORDER = connection.prepareStatement("INSERT INTO \"order\"(id, date, customer_id) VALUES (?, ?, ?)" );
             STM_INSERT_ORDER_ITEM = connection.prepareStatement
                     ("INSERT INTO order_item (order_id, item_code, qty, unit_price) VALUES (?,?,?,?)");
             STM_UPDATE_STOCK = connection.prepareStatement
